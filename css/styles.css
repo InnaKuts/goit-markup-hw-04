@@ -95,7 +95,7 @@ body {
   gap: 40px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 24px;
 }
 
 .header-link {
@@ -107,12 +107,24 @@ body {
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-decoration: none;
-  padding: 24px 0;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
-.header-link:focus {
+.header-link:focus,
+.header-link.active {
   color: #404bbf;
+}
+
+.header-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #4d5ae5;
 }
 
 .header-contacts {
@@ -133,6 +145,7 @@ body {
   line-height: 1.5;
   color: #434455;
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-item:hover,
@@ -275,7 +288,6 @@ body {
   overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
 }
 
 .team-photo {
@@ -357,7 +369,31 @@ body {
   padding: 0;
 }
 
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #4d5ae5;
+  color: #ffffff;
+  padding: 16px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
+}
+
+.protfolio-description {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f4f4fd;
+  letter-spacing: 0.02em;
+  padding: 40 32 0;
+}
+
 .portfolio-item {
+  position: relative;
   flex-basis: calc((100% - 48px) / 3);
   display: flex;
   flex-direction: column;
@@ -374,6 +410,14 @@ body {
   box-shadow: 0px 1px 6px 0px #2e2f4214;
 }
 
+.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-item-header {
+  position: relative;
+}
+
 .portfolio-image {
   width: 100%;
   height: auto;
@@ -386,6 +430,8 @@ body {
   border-top: none;
   text-align: center;
   width: 100%;
+  background: white;
+  z-index: 2;
 }
 
 .portfolio-product-title {

@@ -324,7 +324,7 @@ body {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-item:hover .team-social-link {
+.team-social-link:hover {
   background-color: #404bbf;
 }
 
@@ -406,6 +406,11 @@ body {
   background-color: #2e2f42;
 }
 
+.footer .container {
+  display: flex;
+  gap: 120px;
+}
+
 .footer-logo {
   display: inline-block;
   font-family: 'Raleway', sans-serif;
@@ -432,4 +437,46 @@ body {
   letter-spacing: 0.02em;
   max-width: 264px;
   margin: 0;
+}
+
+.footer-social-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer-social-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-social-link:hover {
+  background-color: #31d0aa;
+}
+
+.footer-social-icon {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
